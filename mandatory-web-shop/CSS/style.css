@@ -1,0 +1,145 @@
+body {
+    max-width: 804px;
+    margin: 0 auto;
+    background-color: #2F3030;
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+    font-family: Merriweatherlight; 
+}
+ul, a {
+	list-style: none;
+	text-decoration: none;
+}
+
+/****************Checkbox Code****************/
+#nav-toggle { 
+    display: none; /*hides the mobile menu checkbox*/
+}
+#nav-toggle:checked + #wrapper nav { 
+    display: block; /*displays mobile menu when the checkbox is on checked mode*/
+}
+
+/****************Header Code****************/
+header { 
+    display: flex; /*flexbox 1 which holds the diamond font icon, <h1> element, image and label*/
+    justify-content: space-between;
+	background-image: url(http://superiortraction.com/wp-content/uploads/2014/07/watercolor-grunge-000004-charcoal-1024x658.jpg);
+	background-repeat: no-repeat; /*displays the image once*/
+	background-size: cover;
+	border-bottom-style: solid;
+    border-bottom-color: #2EFEF7;
+    border-width: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+header .fa-bars { /*styling label which is the bars font icon*/ 
+    color:#2EFEF7;
+    font-size: 2.2em;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+.logo-container {
+    display: flex; /*flexbox 2 which holds the diamond font icon and the <h1> element*/
+    align-items: baseline; /*all flexbox items are aligned such as their baselines align*/
+}
+.logo-container .fa-diamond { /*styling the diamond font icon*/  
+    color:#2EFEF7;
+    font-size: 30px;
+    padding: 5px;
+}
+header h1 { /*styling the <h1> element*/  
+    color:white;
+    text-shadow: 2px 2px 4px #2EFEF7;
+    font-size: 1.8em; 
+}
+
+/****************Navigation Code****************/
+nav { 
+    display: none; /*the menu is hidden on mobile by default*/
+    text-transform: uppercase;
+}
+nav a {
+    display: block; /*block makes the hover strech across the whole <nav>*/ 
+    font-size: 20px; 
+    color:#2EFEF7;
+}
+nav a:hover {
+    background:#656666; /*hover background color*/
+    color:#2EFEF7; /*hover text color*/
+}
+nav ul li {
+    background-color:#424242; /*<nav> background color in mobile*/
+    line-height: 40px;
+    padding-left: 50px;
+}
+
+/****************Section Code****************/
+section {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+section h1 {
+    font-size: 25px;
+    margin-top: 2em; 
+    margin-bottom: 20px;     
+}
+section h1 span {
+    text-decoration: underline;
+    color:#2EFEF7;
+}
+section img {
+    height: auto;
+    width: 100%;
+    margin-top: 1em;
+}
+section h3 {
+    font-size: 1em;
+    margin-top: 1.5em; 
+    padding: 5px;
+    font-style: italic;  
+    background-color: #424242; 
+}
+section h3 span {
+    color: #2EFEF7;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 34em) {
+
+/****************Header Code****************/
+label { 
+    display: none; /*hides the bars font icon on tablet/desktop*/
+} 
+
+/****************Navigation Code****************/
+nav {
+    display: flex; /*flexbox 3 which holds the entire navigation*/
+    justify-content: flex-end; /*pushes flex items to the right*/
+    text-align: center;
+    margin-bottom: 30px;
+}
+.ul1 { 
+    display: flex; /*flexbox 3 which holds the <ul> elements*/
+}
+nav a {
+    font-size: 18px;
+}
+nav ul li { /*styling tablet/desktop navigation*/ 
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 1px;
+    padding-left: 0;
+}
+
+/****************Section Code****************/
+section h1 {
+    font-size: 1.8em;
+}
+section h3 {
+    font-size: 1.3em;
+}
+}
