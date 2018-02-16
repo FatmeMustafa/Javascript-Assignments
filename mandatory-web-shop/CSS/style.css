@@ -106,10 +106,10 @@ section h3 span {
     color: #2EFEF7;
     text-decoration: underline;
 }
-/*form {
+form {
     color: white;
     display: none;
-}*/
+}
 form input {
     margin-top: 5px;
     margin-bottom: 10px;
