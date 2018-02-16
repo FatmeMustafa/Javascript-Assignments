@@ -19,7 +19,7 @@ sectionPart.addEventListener('click', function() {
 */
 
 
-/*****************Hiding <section> element on PRODUCTS and CHECKOUT*****************/
+/*****************Hiding <section> element on PRODUCTS and CHECKOUT******************/
 
 let listItems = document.getElementsByClassName("hide");  
 let hiding = function() {     
@@ -32,19 +32,25 @@ for (let i = 0; i < listItems.length; i++) {                                    
 
 /*****************Showing <form> element on CHECKOUT*****************/
 
+/*
 let showForm = document.getElementById("show2");
 let showing1 = function() {                                   
     document.getElementById("myForm").style.display = "block";
 }
 showForm.addEventListener("click", showing1);              
+*/
+
+/************Hiding <form> element on HOME and PRODUCTS***********/
 
 /*
 let hideForm = document.getElementsByClassName("hide1");  
 let hiding1 = function() {     
     document.getElementById("myForm").style.display = "none"; 
 }
-hideForm.addEventListener('click', hiding1);    
-  */    
+for (let i = 0; i < hide1.length; i++) {                                        
+    hideForm[i].addEventListener('click', hiding1);                                 
+}   
+*/
 
 
 /***************Creating an array of objects representing products*****************/
@@ -88,7 +94,6 @@ console.log(products);
 /***************Checkout*****************/
 
 let rubyForm = document.getElementById("submitBTN");
-
 rubyForm.addEventListener("click", () => {
     let userName = document.getElementById("firstname").value;
     let userLast = document.getElementById("lastname").value;
