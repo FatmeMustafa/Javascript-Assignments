@@ -106,6 +106,34 @@ section h3 span {
     color: #2EFEF7;
     text-decoration: underline;
 }
+/*form {
+    color: white;
+    display: none;
+}*/
+form input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.myComment {
+    height: 100px;
+    width: 380px;
+}
+form .subBTN {
+    background-color: #2EFEF7;
+    padding: 5px;
+    width: 140px;
+    font-weight: bold;
+}
+form #error {
+    color: red;
+}
+form #correct {
+    color: green;
+}
+form h3 {
+    color: #2EFEF7;
+    margin-bottom: 20px;
+}
 
 @media screen and (min-width: 34em) {
 

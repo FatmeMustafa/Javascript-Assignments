@@ -25,9 +25,9 @@
     
     <nav>
         <ul class="ul1">
-            <li id="show"><a href="#"><i class="fa fa-diamond">  HOME</i></a></li>        
-            <li class="hide"><a href="#"><i class="fa fa-diamond">  PRODUCTS</i></a></li>
-            <li class="hide"><a href="#"><i class="fa fa-diamond">  CHECKOUT</i></a></li>
+            <li id="show" class="hide1"><a href="#"><i class="fa fa-diamond">  HOME</i></a></li>        
+            <li class="hide hide1"><a href="#"><i class="fa fa-diamond">  PRODUCTS</i></a></li>
+            <li id="show2" class="hide"><a href="#"><i class="fa fa-diamond">  CHECKOUT</i></a></li>
         </ul>
     </nav>
 
@@ -39,17 +39,34 @@
         <img src="https://images8.alphacoders.com/531/531380.jpg" alt="hero image">
         <h3>"May your foundation match your neck, concealer be creasless and winged eyeliner be sharp enough to kill. <span>AMEN!!!</span>"</h3>
     </section>
-    <br>
 
-    <!--Products-->
-    <div id="rubyProducts">
-    </div>
-
+    <!--Checkout form-->
+    <form id="myForm">
+        <h3>Complete the form below:</h3> 
+        *First name:<br>
+        <input type="text" id="firstname"><br>
+        *Last name:<br>
+        <input type="text" id="lastname"><br>
+        *Email adress:<br>
+        <input type="text" id="emailadress"><br>
+        Phone number:<br>
+        <input type="text" id="phonenumber"><br>
+        *Street adress:<br>
+        <input type="text" id="streetadress"><br>
+        *Zip code:<br>
+        <input type="text" id="zipcode"><br>
+        *City:<br>
+        <input type="text" id="city"><br>
+        Comments:<br>
+        <input type="text" id="comments" class="myComment"><br>
+        <input type="button" value="SUBMIT" id="submitBTN" class="subBTN"><br>
+        <p id="error"></p>
+        <p id="correct"></p>
+    </form>
     <br>
     <br>
     <br>
-    <br>
-
+    
     <script type="text/javascript" src="../scripts/index.js"></script>
 
 </body>
