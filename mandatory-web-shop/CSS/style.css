@@ -108,6 +108,7 @@ section h3 span {
 }
 form {
     color: white;
+    display: none;
 }
 form input {
     margin-top: 5px;
@@ -133,7 +134,9 @@ form h3 {
     color: #2EFEF7;
     margin-bottom: 20px;
 }
-
+#rubyProducts {
+    display: none;
+}
 @media screen and (min-width: 34em) {
 
 /****************Header Code****************/
