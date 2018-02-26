@@ -118,11 +118,19 @@ form input {
     height: 100px;
     width: 380px;
 }
-form .subBTN {
+form .subBTN,
+#myOrders input {
     background-color: #2EFEF7;
     padding: 5px;
     width: 140px;
     font-weight: bold;
+}
+#myOrders input {
+    background-color: #2EFEF7;
+    padding: 5px;
+    font-weight: bold;
+    width: 200px;
+    display: none;
 }
 form #error {
     color: red;
@@ -131,12 +139,35 @@ form #correct {
     color: green;
 }
 form h3 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+form h3,
+#myOrders i {
     color: #2EFEF7;
-    margin-bottom: 20px;
 }
 #rubyProducts {
     display: none;
 }
+#myOrders {
+    display: none;
+    color: white;
+}
+#myOrders #pname1, #pname2, #pname3 {
+    color:#2EFEF7;
+    margin-top: 20px;
+}
+#myOrders #pamount1, #pamount2, #pamount3 {
+    color:#2EFEF7;
+    margin-bottom: 15px;
+}
+#myOrders .fa-shopping-cart {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
 @media screen and (min-width: 34em) {
 
 /****************Header Code****************/
