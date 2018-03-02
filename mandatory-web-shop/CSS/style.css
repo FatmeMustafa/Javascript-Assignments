@@ -1,3 +1,4 @@
+/****************General Styling****************/
 body {
     max-width: 804px;
     margin: 0 auto;
@@ -76,7 +77,7 @@ nav ul li {
     padding-left: 50px;
 }
 
-/****************Section Code****************/
+/****************Section Code*******************/
 section {
     text-align: center;
     color: rgb(255, 255, 255);
@@ -86,7 +87,8 @@ section h1 {
     margin-top: 2em; 
     margin-bottom: 20px;     
 }
-section h1 span {
+section h1 span,
+section h2 span {
     text-decoration: underline;
     color:#2EFEF7;
 }
@@ -106,7 +108,79 @@ section h3 span {
     color: #2EFEF7;
     text-decoration: underline;
 }
-form {
+section h2 {
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+section .fa-diamond {
+    color:#2EFEF7;
+    font-size: 25px;
+}
+section > p {
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+/************Specific Products Code**************/
+#lipstickProductsPage, 
+#brushProductsPage, 
+#eyeshadowProductsPage {
+    display: none;
+    margin-left: 20px;
+}
+#lipstickProductsPage h2,
+#brushProductsPage h2, 
+#eyeshadowProductsPage h2 {
+    color: #2EFEF7;
+}
+.blue {
+    color: #2EFEF7; 
+    margin-top: 30px;
+}
+.white {
+    color: white;
+}
+.pimg {
+    width: 200px;
+    margin-top: 20px;
+}
+.formReviews {
+    color: white;
+}
+.formReviews ul {
+    list-style-type:none;
+}
+ul > li.star  {
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+ul > li.star > i.fa {
+    font-size:1.5em; /*startvalue of star*/ 
+}
+.oldReviews h2 {
+    margin-bottom: 20px;
+}
+.oldReviews p {
+    background-color: white;
+    max-width: 25em;
+}
+.oldReviews p:nth-child(odd) {
+    margin-bottom: 20px;
+}
+.mouseOverStar {
+    color:#FFCC36;
+  }
+
+.selected {
+    color: #FFCC36;
+}
+/****************Checkout Form Code*************/
+#myForm {
     color: white;
     display: none;
 }
@@ -118,7 +192,7 @@ form input {
     height: 100px;
     width: 380px;
 }
-form .subBTN,
+.subBTN,
 #myOrders input {
     background-color: #2EFEF7;
     padding: 5px;
@@ -142,6 +216,8 @@ form h3 {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+/**************Checkout Products Code**************/
 form h3,
 #myOrders i {
     color: #2EFEF7;

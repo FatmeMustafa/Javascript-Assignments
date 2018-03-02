@@ -8,7 +8,10 @@ let showingHome = function() {                                                  
     document.getElementsByClassName("mySection")[0].style.display = "block";          //to show the <section> element on HOME the class "mySection" is set to display block.
     document.getElementById("myForm").style.display = "none";                         //to hide the <myForm> element on HOME the id "myForm" is set to display none.
     document.getElementById("rubyProducts").style.display = "none";
-    document.getElementById("myOrders").style.display = "none";                   
+    document.getElementById("myOrders").style.display = "none";
+    document.getElementById("lipstickProductsPage").style.display = "none";
+    document.getElementById("brushProductsPage").style.display = "none";
+    document.getElementById("eyeshadowProductsPage").style.display = "none";
 }
 sectionPart.addEventListener("click", showingHome);                                   //an EventListener is added to sectionPart with the showingHome function to show the "mySection" class on HOME when clicked.
 
@@ -22,7 +25,10 @@ let showingProducts = function() {
     document.getElementsByClassName("mySection")[0].style.display = "none";            
     document.getElementById("myForm").style.display = "none";                           
     document.getElementById("rubyProducts").style.display = "block";
-    document.getElementById("myOrders").style.display = "none";                     
+    document.getElementById("myOrders").style.display = "none";
+    document.getElementById("lipstickProductsPage").style.display = "none";
+    document.getElementById("brushProductsPage").style.display = "none";
+    document.getElementById("eyeshadowProductsPage").style.display = "none";           
 }
 productsPart.addEventListener("click", showingProducts);                                         
 
@@ -36,7 +42,10 @@ let showingForm = function() {
     document.getElementsByClassName("mySection")[0].style.display = "none";            
     document.getElementById("myForm").style.display = "block";                           
     document.getElementById("rubyProducts").style.display = "none"; 
-    document.getElementById("myOrders").style.display = "block";                    
+    document.getElementById("myOrders").style.display = "block";
+    document.getElementById("lipstickProductsPage").style.display = "none";
+    document.getElementById("brushProductsPage").style.display = "none";
+    document.getElementById("eyeshadowProductsPage").style.display = "none";
 }
 checkoutPart.addEventListener("click", showingForm);                                        
 
@@ -89,7 +98,7 @@ for (x = 0; x < products.length; x++) {                                         
     newHeading2.appendChild(headingContent2);
     createDiv.appendChild(newHeading2);
 
-    let newImg = document.createElement("img");                                                     
+    let newImg = document.createElement("img");                                
     newImg.setAttribute("src", products[x].image);
     newImg.style.cssText = "width:200px;";
     createDiv.appendChild(newImg);
@@ -258,6 +267,253 @@ else {
 });
 
 
+/**********************************************************************************/
+/***************************Assignment 3 Code**************************************/
+/**********************************************************************************/
+
+
+/************Printing Specific Products(Lipstick + Brush + Eyeshadow)**************/
+
+let lipstickProduct = `                                                                          
+    <h2>NYX Lipstick</h2>
+    <h3 class="blue">Product name: ${products[0].name}</h3>           
+    <h3 class="white">Description: ${products[0].description}</h3>
+    <h3 class="white">Price: ${products[0].price}$</h3>'
+    <img class="pimg" src="${products[0].image}">
+    <br><br><br>
+
+    <div class="oldReviews">
+    <h2>Product Reviews</h2>
+    </div>
+    <br><br><br>
+    
+    <h2>Leave A Product Review</h2><br>
+    <form id="review1" action="javascript:void('');" class="formReviews">
+        *Name:<br>
+        <input type="text" id="reviewName1" class="rn"><br>
+        *Comments:<br>
+        <input type="text" id="reviewComment1" class="myComment rc"><br>
+        
+        <ul id="stars">
+            <li class="star" data-value="1"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="2"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="3"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="4"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="5"><i class="fa fa-star"></i></li>
+        </ul>
+
+        <p class="errorMes"></p>
+        <p class="correctMes"></p>
+        <input type="button" value="SUBMIT REVIEW" id="submitReview1" class="subBTN reviewBTN"><br>
+    </form>`;
+document.getElementById("lipstickProductsPage").innerHTML = lipstickProduct;                        //Help... I keep repeating code! :(
+
+
+let brushProduct = `   
+    <h2>Mermaid Brush Set</h2>                              
+    <h3 class="blue">Product name: ${products[1].name}</h3>           
+    <h3 class="white">Description: ${products[1].description}</h3>
+    <h3 class="white">Price: ${products[1].price}$</h3>
+    <img class="pimg" src="${products[1].image}">
+    <br><br><br>
+
+    <div class="oldReviews">
+    <h2>Product Reviews</h2>
+    </div>
+    <br><br><br>
+    
+    <h2>Leave A Product Review</h2><br>
+    <form id="review2" action="javascript:void('');" class="formReviews">
+        *Name:<br>
+        <input type="text" id="reviewName2" class="rn"><br>
+        *Comments:<br>
+        <input type="text" id="reviewComment2" class="myComment rc"><br>
+        
+        <ul id="stars">
+            <li class="star" data-value="1"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="2"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="3"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="4"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="5"><i class="fa fa-star"></i></li>
+        </ul>
+
+        <p class="errorMes"></p>
+        <p class="correctMes"></p>
+        <input type="button" value="SUBMIT REVIEW" id="submitReview2" class="subBTN reviewBTN"><br>
+    </form>`;
+document.getElementById("brushProductsPage").innerHTML = brushProduct;
+
+
+let eyeshadowProduct = `
+    <h2>Loreal Eyeshadow</h2>                                 
+    <h3 class="blue">Product name: ${products[2].name}</h3>           
+    <h3 class="white">Description: ${products[2].description}</h3>
+    <h3 class="white">Price: ${products[2].price}$</h3>
+    <img class="pimg" src="${products[2].image}">
+
+    <div class="oldReviews">
+    <h2>Product Reviews</h2>
+    </div>
+    <br><br><br>
+    
+    <h2>Leave A Product Review</h2><br>
+    <form id="review3" action="javascript:void('');" class="formReviews">
+        *Name:<br>
+        <input type="text" id="reviewName3" class="rn"><br>
+        *Comments:<br>
+        <input type="text" id="reviewComment3" class="myComment rc"><br>
+        
+        <ul id="stars">
+            <li class="star" data-value="1"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="2"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="3"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="4"><i class="fa fa-star"></i></li>
+            <li class="star" data-value="5"><i class="fa fa-star"></i></li>
+        </ul>
+
+        <p class="errorMes"></p>
+        <p class="correctMes"></p>
+        <input type="button" value="SUBMIT REVIEW" id="submitReview3" class="subBTN reviewBTN"><br>
+    </form>`;
+document.getElementById("eyeshadowProductsPage").innerHTML = eyeshadowProduct;
+
+
+/**********************Showing & Hiding Specific Products**************************/
+
+$(function() {
+
+$("#showLipstick").on("click", function () {
+    $("#lipstickProductsPage").show();
+    $(".mySection").hide();
+});
+
+$("#showBrush").on("click", function () {
+    $("#brushProductsPage").show();
+    $(".mySection").hide();
+});
+
+$("#showEyeshadow").on("click", function () {
+    $("#eyeshadowProductsPage").show();
+    $(".mySection").hide();
+});
+
+
+/**********************Review Validation Form**************************/
+
+
+$(".reviewBTN").click(function() {                                     
+    let usersName = $(".rn").val();
+    let usersComment = $(".rc").val();
+    
+   if (usersName === "" || usersComment === "") {
+        $(".errorMes").text("Please fill in the required fields * correctly!");
+        $(".errorMes").css({'color': 'red'});    
+    }
+    else {                                                              //A bug... This does not work all the time... Only on first product. WHY?!
+        $(".correctMes").text("Thank you! Your feedback is appericiated! :)");
+        $(".correctMes").css({'color': 'green'});
+    }
+});
+
+
+/**********************Adding Product Review**************************/
+
+let timestamp = new Date();                                            //Why does it not work effectively?!
+let datetime = "Posted: " 
+    + timestamp.getDate() + "/" 
+    + (timestamp.getMonth()+1) + "/"                                  //we say plus 1 because months start with 0.
+    + timestamp.getFullYear() + " " 
+    + timestamp.getHours() + ":" 
+    + timestamp.getMinutes();
+
+$("#submitReview1").on("click", function() {                          //I'm repeating this code again for each product... How can I write this more effective?! Maybe with the keyword this?
+    let usersName1 = $("#reviewName1").val();
+    let usersComment1 = $("#reviewComment1").val();
+    let newP1 = $("<p>").append("Name: " + usersName1);   
+    let newP2 = $("<p>").append("Comment: " + usersComment1 + "<br>" + datetime);
+    
+    if (usersName1 === "" || usersComment1 === "") {
+        return;
+    }
+    else {
+        $('#lipstickProductsPage .oldReviews').append(newP1).append(newP2);
+        $(".errorMes").hide();
+    }
+});
+
+/*let amoutOfStars = parseInt($(this).data("value")); 
+$(this).css({"color": "#FFCC36"});*/
+
+
+
+$("#submitReview2").on("click", function() {                       
+    let usersName2 = $("#reviewName2").val();
+    let usersComment2 = $("#reviewComment2").val();
+    let newP1_2 = $("<p>").append("Name: " + usersName2);   
+    let newP2_2 = $("<p>").append("Comment: " + usersComment2 + "<br>" + datetime);
+    
+    if (usersName2 === "" || usersComment2 === "") {
+        return;
+    }
+    else {
+       $('#brushProductsPage .oldReviews').append(newP1_2).append(newP2_2)
+       $(".errorMes").hide();
+       $(".correctMes").show();                                                  //Review button does not show the correct message WHY?! And even when I write show it does not work?!
+    }
+    
+});
+
+
+$("#submitReview3").on("click", function() {                        
+    let usersName3 = $("#reviewName3").val();
+    let usersComment3 = $("#reviewComment3").val();
+    let newP1_3 = $("<p>").append("Name: " + usersName3);   
+    let newP2_3 = $("<p>").append("Comment: " + usersComment3 + "<br>" + datetime);
+    
+    if (usersName3 === "" || usersComment3 === "") {
+        return;
+    }
+    else {
+        $('#eyeshadowProductsPage .oldReviews').append(newP1_3).append(newP2_3);
+        $(".errorMes").hide();
+        $(".correctMes").show(); 
+    }
+});
+
+
+/****************************Star Rating*******************************/
+
+
+$(".star").on("mouseover", function() {                                     
+    let amoutOfStars = parseInt($(this).data("value"));                          //parseInt returns the data-value of li to an integer each star has a number from 1-5.
+    $(this).parent().children("li.star").each(function(e) {
+        if (e < amoutOfStars) {
+            $(this).addClass("mouseOverStar");                                   //Adding a class when I hover over the stars that turn them yellow.
+        }
+        else {
+            $(this).removeClass("mouseOverStar");
+        }
+    });
+
+    $(".star").on("click", function() {
+        let amoutOfStars = parseInt($(this).data("value"));
+        let stars = $(this).parent().children('li.star');
+
+        for (i = 0; i < amoutOfStars; i++) {
+            $(stars[i]).addClass("selected");
+        }
+    });
+});
+
+});
+
+//let newP2 = $("<p>").append("Comment: " + usersComment1 + "<br>" + datetime + "stars given: " + amo);
+
+
+
+
+
+
 /*************************************************************************************/
 /**********************Alternative code 1 - Anonymous function************************/
 /*************************************************************************************/
@@ -269,17 +525,18 @@ sectionPart.addEventListener("click", function() {
     document.getElementById("rubyProducts").style.display = "none";    
 });*/
 
+
 /**********************************************************************************/
 /***************************Alternative code 2 - Array Map*************************/
 /**********************************************************************************/
 
-/*let products = products.map(product =>                                         //map creates a new array-list by calling a function on the array element products. The function returns the <ul> element.            
-    `<ul>                                                                        //` (template literals) are used to write exactly how the html code should look like.                                   
-        <li>${product.name}</li>                                                 //$product.name displays the array name. 
-        <li>${product.price}</li>
+/*let printProducts = products.map(product =>                
+    `<ul>                                 
+        <li>${product.name}</li>           
         <li>${product.description}</li>
+        <li>${product.price}</li>
         <img src="${product.image}">
     </ul>`);                                                          
-products = products.join("");                                                   //join() joins the elements of products into a string and returns the string.
-document.getElementById('rubyProducts').innerHTML = products;                   //places the <ul> element inside the <div> "rubyProducts".
+printProducts1 = printProducts.join("");                                                //removes the comma sign from the arrays                                        
+document.getElementById("lipstickProductsPage").innerHTML = printProducts1;        
 */
