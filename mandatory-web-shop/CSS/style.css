@@ -177,7 +177,7 @@ ul > li.star > i.fa {
   }
 
 .selected {
-    color: #FFCC36;
+    color: blue;
 }
 /****************Checkout Form Code*************/
 #myForm {

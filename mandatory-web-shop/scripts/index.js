@@ -119,6 +119,7 @@ for (x = 0; x < products.length; x++) {                                         
 console.log(products);
 
 
+
 /***********************Adding products inside the cart****************************/
 
 let cart = [];                                                                     //the cart is empty in the beginning.
@@ -278,7 +279,7 @@ let lipstickProduct = `
     <h2>NYX Lipstick</h2>
     <h3 class="blue">Product name: ${products[0].name}</h3>           
     <h3 class="white">Description: ${products[0].description}</h3>
-    <h3 class="white">Price: ${products[0].price}$</h3>'
+    <h3 class="white">Price: ${products[0].price}$</h3>
     <img class="pimg" src="${products[0].image}">
     <br><br><br>
 
@@ -400,7 +401,6 @@ $("#showEyeshadow").on("click", function () {
 
 /**********************Review Validation Form**************************/
 
-
 $(".reviewBTN").click(function() {                                     
     let usersName = $(".rn").val();
     let usersComment = $(".rc").val();
@@ -441,10 +441,6 @@ $("#submitReview1").on("click", function() {                          //I'm repe
     }
 });
 
-/*let amoutOfStars = parseInt($(this).data("value")); 
-$(this).css({"color": "#FFCC36"});*/
-
-
 
 $("#submitReview2").on("click", function() {                       
     let usersName2 = $("#reviewName2").val();
@@ -483,10 +479,9 @@ $("#submitReview3").on("click", function() {
 
 /****************************Star Rating*******************************/
 
-
-$(".star").on("mouseover", function() {                                     
+$("#stars li").on("mouseover", function() {                                     
     let amoutOfStars = parseInt($(this).data("value"));                          //parseInt returns the data-value of li to an integer each star has a number from 1-5.
-    $(this).parent().children("li.star").each(function(e) {
+    $(this).parent().children("li.star").each(function(e) {                      
         if (e < amoutOfStars) {
             $(this).addClass("mouseOverStar");                                   //Adding a class when I hover over the stars that turn them yellow.
         }
@@ -494,21 +489,23 @@ $(".star").on("mouseover", function() {
             $(this).removeClass("mouseOverStar");
         }
     });
+});
 
-    $(".star").on("click", function() {
+    $("#stars li").on("click", function selectStars() {
         let amoutOfStars = parseInt($(this).data("value"));
-        let stars = $(this).parent().children('li.star');
+        let stars = $(this).parent().children("li.star");
 
         for (i = 0; i < amoutOfStars; i++) {
             $(stars[i]).addClass("selected");
         }
-    });
+
+        let starsValue = parseInt($("li.selected").last().data("value"));
+        let starsValueMessage = $("<p>").append("Amount of stars: " + starsValue);
+
+        $('.oldReviews').append(starsValueMessage);
 });
 
 });
-
-//let newP2 = $("<p>").append("Comment: " + usersComment1 + "<br>" + datetime + "stars given: " + amo);
-
 
 
 
