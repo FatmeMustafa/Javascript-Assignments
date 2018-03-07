@@ -224,6 +224,8 @@ form h3,
 }
 #rubyProducts {
     display: none;
+    color: white;
+    list-style: none;
 }
 #myOrders {
     display: none;
