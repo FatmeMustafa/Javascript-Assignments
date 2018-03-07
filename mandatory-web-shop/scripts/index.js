@@ -1,56 +1,44 @@
 $(function() {
 
 /************Creating an array of objects representing edument products***************/
-
-fetch("http://localhost:3000/products")                                             //the URL of the API is a parameter. 
+/******************************See Alternative Code 1*********************************/
+fetch("https:/demo.edument.se/api/products")                                         //the URL of the API is a parameter. 
 .then(function(response) {
     return response.json();                                                         //transforms the data from the URL into json.
 })     
 .then(function (products) {                                                         //this function is executed if the fetch succeeds.
     console.log("fetch completed", products);      
 
-    let hElement = ` <h2>Products</h2><br>`;                                        //why cant I see my elements inside the rubyProducts div (HTML code) when I use string literals?
+    let hElement = `<h2>Products</h2><br>`;                                         //why cant I see my elements inside the rubyProducts div (HTML code) when I use string literals?
 
     let printProducts = products.map(product =>                
-        `
-        <ul>                                 
+        `<ul>                                 
             <li>Id: ${product.Id}</li>           
             <li>Name: ${product.Name}</li>
             <li>Description: ${product.Description}</li>
             <li>Price: ${product.Price}</li>
             <img src="${product.Image}">
             <li>URL: ${product.Url}</li>
+            <li>Reviews: ${product.Reviews}
+                <ul>
+                <li></li>
+                </ul>
+            </li>
+            </ul>
             <br>
         </ul>`);                                                          
-    printProducts1 = printProducts.join("");        //removes the comma sign from the arrays                                        
+    printProducts1 = printProducts.join("");                                        //removes the comma sign from the arrays                                        
     document.getElementById("rubyProducts").innerHTML = hElement + printProducts1;
 })
-  
-.catch(function(err) {
+.catch(function(err) {                                                            //if the server returns an error it is catched and displayed in the console.  
     console.log(err);
-});    //if the server returns an error it is catched and displayed in the console.    
-
-
-
-    
-
-const ul = document.getElementById('rubyProducts');
+});      
 
 
 
 
 
 
-/*let printProducts = products.map(product =>                
-    `<ul>                                 
-        <li>${product.name}</li>           
-        <li>${product.description}</li>
-        <li>${product.price}</li>
-        <img src="${product.image}">
-    </ul>`);                                                          
-printProducts1 = printProducts.join("");        //removes the comma sign from the arrays                                        
-document.getElementById("rubyProducts").innerHTML = printProducts1;
-*/
 
 
 
@@ -98,3 +86,29 @@ let showingProducts = function() {
 productsPart.addEventListener("click", showingProducts);
         
 });
+
+/******************************See Alternative Code 1*********************************/
+
+/*document.getElementById("getPosts").addEventListener('click', getPosts);
+
+function getPosts () {
+    fetch('https:/demo.edument.se/api/products')
+    .then((res) => res.json())
+    .then((data) => {
+        let output = '<h2>Posts</h2>';
+        data.forEach(function(post) {
+            output += `
+            <div>
+                <p>Id: ${post.Id}</p>           
+                <p>Name: ${post.Name}</p>
+                <p>Description: ${post.Description}</p>
+                <p>Price: ${post.Price}</p>
+                <img src="${post.Image}">
+                <p>URL: ${post.Url}</p>
+                <br>
+            </div>
+            `;
+        });
+        document.getElementById('rubyProducts').innerHTML = output;
+    })
+}*/
