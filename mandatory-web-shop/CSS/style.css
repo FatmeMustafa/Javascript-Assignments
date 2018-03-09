@@ -199,6 +199,14 @@ form input {
     width: 140px;
     font-weight: bold;
 }
+
+.addToCart {
+    background-color: #2EFEF7;
+    padding: 5px;
+    width: 140px;
+    font-weight: bold;
+}
+
 #myOrders input {
     background-color: #2EFEF7;
     padding: 5px;
