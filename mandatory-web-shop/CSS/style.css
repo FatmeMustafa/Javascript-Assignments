@@ -149,7 +149,7 @@ section > p {
     margin-top: 20px;
 }
 .formReviews {
-    color: white;
+    color: color;
 }
 .formReviews ul {
     list-style-type:none;
@@ -168,6 +168,7 @@ ul > li.star > i.fa {
 .oldReviews p {
     background-color: white;
     max-width: 25em;
+    color: black;
 }
 .oldReviews p:nth-child(odd) {
     margin-bottom: 20px;
